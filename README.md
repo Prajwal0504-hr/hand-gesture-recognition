@@ -28,19 +28,15 @@ This project implements a deep learning-based hand gesture recognition system us
 
 ## Project Structure
 
-```
 hand-gesture-recognition/
 │
 ├── app/            # Flask application (routes, templates, uploads)
-├── data/           # Dataset (not included in repository)
 ├── models/         # Trained model file
 ├── results/        # Output images (accuracy, confusion matrix)
 ├── src/            # Model training scripts
-│
 ├── README.md
 ├── requirements.txt
-├── .gitignore
-```
+└── .gitignore
 
 ---
 
@@ -53,47 +49,75 @@ hand-gesture-recognition/
 
 ---
 
+## Workflow
+
+1. Data Collection
+   Images are collected for four gesture classes and organized into separate folders.
+
+2. Data Preprocessing
+
+   * Convert images to grayscale
+   * Resize to 128x128
+   * Normalize pixel values
+   * Apply histogram equalization and noise reduction
+
+3. Model Training
+
+   * MobileNetV2 is used as the base model
+   * Transfer learning is applied
+   * Custom dense layers are added for classification
+
+4. Evaluation
+
+   * Model performance is evaluated using accuracy, classification report, and confusion matrix
+
+5. Deployment
+
+   * A Flask web application is used for user interaction and prediction
+
+---
+
 ## Results
 
-The model performance is evaluated using:
+The model achieves an accuracy of approximately 88% on the test dataset.
 
-* Classification report
-* Confusion matrix
-* Accuracy and loss graphs
+### Confusion Matrix
+<img width="1280" height="612" alt="Confusion Matrix" src="https://github.com/user-attachments/assets/6de2f3c6-8b85-4e29-9a4b-0c180d9be7a6" />
 
-(Include images from the `results/` folder here)
+
+### Accuracy and Loss
+<img width="1200" height="400" alt="Accuracy and Loss" src="https://github.com/user-attachments/assets/e35a78d8-a401-4b6e-aa9f-c8ebe4158a65" />
 
 ---
 
 ## Installation
 
 1. Clone the repository:
+   git clone https://github.com/Prajwal0504-hr/hand-gesture-recognition.git
 
-```
-git clone https://github.com/your-username/hand-gesture-recognition.git
-cd hand-gesture-recognition
-```
+2. Navigate to the project folder:
+   cd hand-gesture-recognition
 
-2. Install dependencies:
-
-```
-pip install -r requirements.txt
-```
+3. Install dependencies:
+   pip install -r requirements.txt
 
 ---
 
 ## Running the Application
 
-```
 cd app
 python app.py
-```
 
-Open a browser and navigate to:
-
-```
+Open a browser and go to:
 http://127.0.0.1:5000
-```
+
+---
+
+## Usage
+
+1. Register or log in to the application
+2. Upload a hand gesture image
+3. View predicted gesture and confidence score
 
 ---
 
@@ -101,6 +125,7 @@ http://127.0.0.1:5000
 
 * Sign language recognition
 * Human-computer interaction systems
+* Touchless interfaces
 * Accessibility tools
 
 ---
@@ -108,8 +133,8 @@ http://127.0.0.1:5000
 ## Future Improvements
 
 * Real-time webcam-based gesture detection
-* Increase dataset size for better accuracy
-* Deployment on cloud platforms
+* Increase dataset size for improved accuracy
+* Deploy application on cloud platforms
 
 ---
 
